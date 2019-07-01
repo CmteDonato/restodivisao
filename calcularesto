@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int mod(int x, int y){
+	if(x == y) return 0;
+	if(x < y) return x;
+	return mod(x - y, y);
+}
+
+int main(){
+	setlocale(LC_ALL, "Portuguese");
+	int num, num2, resto;
+	
+	printf("\nDigite um número: ");
+	scanf("%d", &num);
+	printf("\nDigite um número: ");
+	scanf("%d", &num2);
+	resto = mod(num,num2);
+	printf("\nO resto é: %d", resto);
+	
+	return 0;
+}
